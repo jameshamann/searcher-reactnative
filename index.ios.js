@@ -8,23 +8,29 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
+  TextInput,
   Text,
   View
 } from 'react-native';
 
 export default class searcher extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { text: 'Enter a Movie or TV Show' };
+  }
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to Searcher!
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          onChangeText={(text) => this.setState({text})}
+          value={this.state.text}
+        />
+        <Text style={styles.welcome}>
+          {this.state.text}
         </Text>
       </View>
     );

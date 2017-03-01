@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
+  TextInput,
   View
 } from 'react-native';
 
@@ -22,6 +22,7 @@ export default class searcher extends Component {
         <Text style={styles.instructions}>
           To get started, edit index.android.js
         </Text>
+        <SearchResults />
         <Text style={styles.instructions}>
           Double tap R on your keyboard to reload,{'\n'}
           Shake or press menu button for dev menu
