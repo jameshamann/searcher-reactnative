@@ -9,23 +9,29 @@ import {
   AppRegistry,
   StyleSheet,
   TextInput,
+  Text,
   View
 } from 'react-native';
 
 export default class searcher extends Component {
+
+  constructor(props) {
+   super(props);
+   this.state = { text: '' };
+ }
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to Searcher!
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <SearchResults />
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
+        <TextInput
+          style={{height: 30, borderColor: 'grey', borderWidth: 1, width: 200}}
+          onChangeText={(text) => this.setState({text})}
+          value={this.state.text}
+        />
+        <Text style={styles.welcome}>
+          {this.state.text}
         </Text>
       </View>
     );

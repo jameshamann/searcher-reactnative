@@ -25,7 +25,7 @@ export default class searcher extends Component {
           Welcome to Searcher!
         </Text>
         <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          style={{height: 40, borderColor: 'grey', borderWidth: 1}}
           onChangeText={(text) => this.setState({text})}
           value={this.state.text}
         />
