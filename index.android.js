@@ -32,7 +32,7 @@ export default class searcher extends Component {
     var results;
     var self = this;
     console.log(self);
-    fetch('https://www.omdbapi.com/?tomatoes=true&t=' + this.state.value)
+    fetch('https://www.omdbapi.com/?tomatoes=true&t=' + this.state.text)
         .then(function(res) {
             return res.json();
         }).then(function(json) {
@@ -65,9 +65,14 @@ export default class searcher extends Component {
           onSubmitEditing={(event) => this.handleSubmit(event)}
           value={this.state.text}
         />
-        <Text style={styles.welcome}>
-          {this.state.text}
-          {console.log(this.state.text)}
+      <Text style={styles.instructions}>
+          {this.state.error}
+          {this.state.title}
+          {this.state.released}
+          {this.state.metacritic}
+          {this.state.imdb}
+          {this.state.rotten}
+          {this.state.plot}
         </Text>
       </View>
     );
