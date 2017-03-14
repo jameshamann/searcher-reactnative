@@ -32,7 +32,7 @@ export default class searcher extends Component {
     var results;
     var self = this;
     console.log(self);
-    fetch('https://www.omdbapi.com/?tomatoes=true&t=' + this.state.text)
+    fetch('https://www.omdbapi.com/?tomatoes=true&t=' + this.state.value)
         .then(function(res) {
             return res.json();
         }).then(function(json) {
