@@ -10,7 +10,8 @@ import {
   StyleSheet,
   TextInput,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 
 export default class searcher extends Component {
@@ -32,22 +33,23 @@ export default class searcher extends Component {
     var results;
     var self = this;
     console.log(self);
-    fetch('https://www.omdbapi.com/?tomatoes=true&t=' + this.state.value)
+    fetch('https://www.omdbapi.com/?tomatoes=true&t=' + this.state.text)
         .then(function(res) {
             return res.json();
         }).then(function(json) {
               console.log(json)
               self.setState({
-                error: json.Error,
+                error: json.Error + '\n' + '\n',
                 poster: json.Poster,
-                title:  json.Title,
-                actors: 'Actors: ' + json.Actors,
-                released: 'Released: '+ json.Released,
-                metacritic: 'Metacritic Score: ' + json.Metascore,
-                imdb: 'IMDB Rating: ' + json.imdbRating,
-                rotten: 'Rotten Tomato Meter: ' + json.tomatoMeter + '%',
+                title:  json.Title + '\n' + '\n',
+                actors: 'Actors: ' + json.Actors + '\n' + '\n',
+                released: 'Released: '+ json.Released + '\n' + '\n',
+                metacritic: 'Metacritic Score: ' + json.Metascore + '\n' + '\n',
+                imdb: 'IMDB Rating: ' + json.imdbRating + '\n' + '\n',
+                rotten: 'Rotten Tomato Meter: ' + json.tomatoMeter + '%' + '\n' + '\n',
                 plot: 'Plot: ' + json.Plot
               });
+
 
           });
     event.preventDefault();
@@ -56,18 +58,28 @@ export default class searcher extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to Searcher!
+        <Text style={styles.heading}>
+          Searcher
         </Text>
         <TextInput
-          style={{height: 40, borderColor: 'grey', borderWidth: 1, width: 200}}
+          style={{height: 40, borderColor: 'grey', borderWidth: 1, width: 200, padding: 10}}
           onChangeText={(text) => this.setState({text})}
           onSubmitEditing={(event) => this.handleSubmit(event)}
           value={this.state.text}
         />
-        <Text style={styles.welcome}>
-          {this.state.text}
-          {console.log(this.state.text)}
+      <View>
+        <Image
+          style={{width: 150, height: 222, padding: 10}}
+          source={{uri: this.state.poster}}
+        />
+      </View>
+      <Text style={styles.searchResults}>
+          {this.state.title}
+          {this.state.released}
+          {this.state.metacritic}
+          {this.state.imdb}
+          {this.state.rotten}
+          {this.state.plot}
         </Text>
       </View>
     );
@@ -81,15 +93,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
+  heading: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    fontFamily: 'Avenir',
   },
-  instructions: {
+  searchResults: {
     textAlign: 'center',
+    padding: 10,
     color: '#333333',
     marginBottom: 5,
+    fontWeight: 'bold',
   },
 });
 
