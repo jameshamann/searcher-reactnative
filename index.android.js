@@ -39,14 +39,14 @@ export default class searcher extends Component {
         }).then(function(json) {
               console.log(json)
               self.setState({
-                error: json.Error + '\n',
+                error: json.Error + '\n' + '\n',
                 poster: json.Poster,
-                title:  json.Title + '\n',
-                actors: 'Actors: ' + json.Actors + '\n',
-                released: 'Released: '+ json.Released + '\n',
-                metacritic: 'Metacritic Score: ' + json.Metascore + '\n',
-                imdb: 'IMDB Rating: ' + json.imdbRating + '\n',
-                rotten: 'Rotten Tomato Meter: ' + json.tomatoMeter + '%' + '\n',
+                title:  json.Title + '\n' + '\n',
+                actors: 'Actors: ' + json.Actors + '\n' + '\n',
+                released: 'Released: '+ json.Released + '\n' + '\n',
+                metacritic: 'Metacritic Score: ' + json.Metascore + '\n' + '\n',
+                imdb: 'IMDB Rating: ' + json.imdbRating + '\n' + '\n',
+                rotten: 'Rotten Tomato Meter: ' + json.tomatoMeter + '%' + '\n' + '\n',
                 plot: 'Plot: ' + json.Plot
               });
 
