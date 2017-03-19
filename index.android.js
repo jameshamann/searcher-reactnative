@@ -50,6 +50,7 @@ export default class searcher extends Component {
                 plot: 'Plot: ' + json.Plot
               });
 
+
           });
     event.preventDefault();
   }
@@ -61,14 +62,17 @@ export default class searcher extends Component {
           Searcher
         </Text>
         <TextInput
-          style={{height: 40, borderColor: 'grey', borderWidth: 1, width: 200}}
+          style={{height: 40, borderColor: 'grey', borderWidth: 1, width: 200, padding: 10}}
           onChangeText={(text) => this.setState({text})}
           onSubmitEditing={(event) => this.handleSubmit(event)}
           value={this.state.text}
         />
+      <View>
         <Image
+          style={{width: 150, height: 222, padding: 10}}
           source={{uri: this.state.poster}}
         />
+      </View>
       <Text style={styles.searchResults}>
           {this.state.title}
           {this.state.released}
