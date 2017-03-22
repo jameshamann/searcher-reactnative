@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1490215758826" clover="3.2.0">
-  <project timestamp="1490215758826" name="All files">
+<coverage generated="1490216040123" clover="3.2.0">
+  <project timestamp="1490216040123" name="All files">
     <metrics statements="24" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="13" coveredmethods="4" elements="37" coveredelements="16" complexity="0" loc="24" ncloc="24" packages="1" files="2" classes="2">
       <file name="index.android.js" path="/Users/jameshamann/Documents/Dev_Work/searcher-reactnative/index.android.js">
         <metrics statements="18" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="2"/>
