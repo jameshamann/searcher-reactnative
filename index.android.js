@@ -94,12 +94,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   heading: {
+    fontFamily: 'Avenir',
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-    fontFamily: 'Avenir',
   },
   searchResults: {
+    fontFamily: 'Avenir',
     textAlign: 'center',
     padding: 10,
     color: '#333333',
