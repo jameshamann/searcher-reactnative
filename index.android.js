@@ -116,9 +116,8 @@ const styles = StyleSheet.create({
     fontFamily: 'sans-serif-thin',
     textAlign: 'center',
     padding: 5,
-    color: '#333333',
+    color: 'black',
     marginBottom: 5,
-    fontWeight: 'bold',
   },
 });
 
