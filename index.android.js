@@ -12,6 +12,7 @@ import {
   Text,
   View,
   Image,
+  ScrollView
 } from 'react-native';
 
 export default class searcher extends Component {
@@ -57,6 +58,7 @@ export default class searcher extends Component {
 
   render() {
     return (
+      <ScrollView>
       <View style={styles.container}>
         <Text style={styles.heading}>
           Searcher
@@ -90,6 +92,7 @@ export default class searcher extends Component {
             {this.state.plot}
           </Text>
         </View>
+      </ScrollView>
     );
   }
 }

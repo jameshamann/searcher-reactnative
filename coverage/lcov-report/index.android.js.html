@@ -155,7 +155,17 @@
 110
 111
 112
-113</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -220,8 +230,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -244,6 +262,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -280,7 +300,7 @@ import {
   TextInput,
   Text,
   View,
-  Image
+  Image,
 } from 'react-native';
 &nbsp;
 export default class searcher extends Component {
@@ -330,27 +350,35 @@ export default class searcher extends Component {
         &lt;Text style={styles.heading}&gt;
           Searcher
         &lt;/Text&gt;
-        &lt;TextInput
-          style={{height: 40, borderColor: 'grey', borderWidth: 1, width: 200, padding: 10}}
-          onChangeText={<span class="fstat-no" title="function not covered" >(t</span>ext) =&gt; <span class="cstat-no" title="statement not covered" >this.setState({text})}</span>
-          onSubmitEditing={<span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; <span class="cstat-no" title="statement not covered" >this.handleSubmit(event)}</span>
-          value={this.state.text}
-        /&gt;
-      &lt;View&gt;
-        &lt;Image
-          style={{width: 150, height: 222, padding: 10}}
-          source={{uri: this.state.poster}}
-        /&gt;
-      &lt;/View&gt;
-      &lt;Text style={styles.searchResults}&gt;
-          {this.state.title}
-          {this.state.released}
-          {this.state.metacritic}
-          {this.state.imdb}
-          {this.state.rotten}
-          {this.state.plot}
-        &lt;/Text&gt;
-      &lt;/View&gt;
+          &lt;View style={{padding: 20}}&gt;
+            &lt;Image
+              style={{height: 50, width: 50}}
+              source={require('./img/icon.png')}
+             /&gt;
+         &lt;/View&gt;
+         &lt;View&gt;
+           &lt;TextInput
+             style={{height: 40, borderColor: 'grey', borderWidth: 1, width: 200, padding: 10}}
+             onChangeText={<span class="fstat-no" title="function not covered" >(t</span>ext) =&gt; <span class="cstat-no" title="statement not covered" >this.setState({text})}</span>
+             onSubmitEditing={<span class="fstat-no" title="function not covered" >(e</span>vent) =&gt; <span class="cstat-no" title="statement not covered" >this.handleSubmit(event)}</span>
+             value={this.state.text}
+           /&gt;
+         &lt;/View&gt;
+        &lt;View&gt;
+          &lt;Image
+            style={{width: 150, height: 222, padding: 10}}
+            source={{uri: this.state.poster}}
+          /&gt;
+        &lt;/View&gt;
+        &lt;Text style={styles.searchResults}&gt;
+            {this.state.title}
+            {this.state.released}
+            {this.state.metacritic}
+            {this.state.imdb}
+            {this.state.rotten}
+            {this.state.plot}
+          &lt;/Text&gt;
+        &lt;/View&gt;
     );
   }
 }
@@ -358,18 +386,20 @@ export default class searcher extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 5,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   heading: {
-    fontFamily: 'Avenir',
-    fontSize: 20,
+    fontFamily: 'sans-serif-thin',
+    fontSize: 40,
     textAlign: 'center',
     margin: 10,
+    color: 'black',
   },
   searchResults: {
-    fontFamily: 'Avenir',
+    fontFamily: 'sans-serif-thin',
     textAlign: 'center',
     padding: 10,
     color: '#333333',
@@ -385,7 +415,7 @@ AppRegistry.registerComponent('searcher', <span class="fstat-no" title="function
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Mar 22 2017 20:54:00 GMT+0000 (GMT)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Mar 26 2017 14:01:54 GMT+0100 (BST)
 </div>
 </div>
 <script src="prettify.js"></script>
