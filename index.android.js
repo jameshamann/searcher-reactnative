@@ -11,7 +11,8 @@ import {
   TextInput,
   Text,
   View,
-  Image
+  Image,
+  ScrollView
 } from 'react-native';
 
 export default class searcher extends Component {
@@ -57,31 +58,42 @@ export default class searcher extends Component {
 
   render() {
     return (
+      <ScrollView>
       <View style={styles.container}>
         <Text style={styles.heading}>
           Searcher
         </Text>
-        <TextInput
-          style={{height: 40, borderColor: 'grey', borderWidth: 1, width: 200, padding: 10}}
-          onChangeText={(text) => this.setState({text})}
-          onSubmitEditing={(event) => this.handleSubmit(event)}
-          value={this.state.text}
-        />
-      <View>
-        <Image
-          style={{width: 150, height: 222, padding: 10}}
-          source={{uri: this.state.poster}}
-        />
-      </View>
-      <Text style={styles.searchResults}>
-          {this.state.title}
-          {this.state.released}
-          {this.state.metacritic}
-          {this.state.imdb}
-          {this.state.rotten}
-          {this.state.plot}
-        </Text>
-      </View>
+          <View style={{padding: 5}}>
+            <Image
+              style={{height: 50, width: 50}}
+              source={require('./img/icon.png')}
+             />
+         </View>
+         <View style={styles.container}>
+           <TextInput
+             style={{height: 40, borderColor: 'grey', borderWidth: 1, width: 200, padding: 10}}
+             underlineColorAndroid='transparent'
+             onChangeText={(text) => this.setState({text})}
+             onSubmitEditing={(event) => this.handleSubmit(event)}
+             value={this.state.text}
+           />
+         </View>
+        <View>
+          <Image
+            style={{width: 150, height: 222, padding: 5}}
+            source={{uri: this.state.poster}}
+          />
+        </View>
+        <Text style={styles.searchResults}>
+            {this.state.title}
+            {this.state.released}
+            {this.state.metacritic}
+            {this.state.imdb}
+            {this.state.rotten}
+            {this.state.plot}
+          </Text>
+        </View>
+      </ScrollView>
     );
   }
 }
@@ -89,23 +101,25 @@ export default class searcher extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 5,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+
   },
   heading: {
-    fontFamily: 'Avenir',
-    fontSize: 20,
+    fontFamily: 'sans-serif-thin',
+    fontSize: 40,
     textAlign: 'center',
     margin: 10,
+    color: 'black',
   },
   searchResults: {
-    fontFamily: 'Avenir',
+    fontFamily: 'sans-serif-thin',
     textAlign: 'center',
-    padding: 10,
-    color: '#333333',
+    padding: 5,
+    color: 'black',
     marginBottom: 5,
-    fontWeight: 'bold',
   },
 });
 
