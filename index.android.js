@@ -63,13 +63,13 @@ export default class searcher extends Component {
         <Text style={styles.heading}>
           Searcher
         </Text>
-          <View style={{padding: 20}}>
+          <View style={{padding: 5}}>
             <Image
               style={{height: 50, width: 50}}
               source={require('./img/icon.png')}
              />
          </View>
-         <View>
+         <View style={styles.container}>
            <TextInput
              style={{height: 40, borderColor: 'grey', borderWidth: 1, width: 200, padding: 10}}
              onChangeText={(text) => this.setState({text})}
@@ -79,7 +79,7 @@ export default class searcher extends Component {
          </View>
         <View>
           <Image
-            style={{width: 150, height: 222, padding: 10}}
+            style={{width: 150, height: 222, padding: 5}}
             source={{uri: this.state.poster}}
           />
         </View>
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   searchResults: {
     fontFamily: 'sans-serif-thin',
     textAlign: 'center',
-    padding: 10,
+    padding: 5,
     color: '#333333',
     marginBottom: 5,
     fontWeight: 'bold',
