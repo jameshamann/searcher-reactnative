@@ -72,6 +72,7 @@ export default class searcher extends Component {
          <View style={styles.container}>
            <TextInput
              style={{height: 40, borderColor: 'grey', borderWidth: 1, width: 200, padding: 10}}
+             underlineColorAndroid='transparent'
              onChangeText={(text) => this.setState({text})}
              onSubmitEditing={(event) => this.handleSubmit(event)}
              value={this.state.text}
@@ -104,6 +105,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+
   },
   heading: {
     fontFamily: 'sans-serif-thin',
