@@ -30,6 +30,7 @@ export default class searcher extends Component {
   }
 
   handleSubmit(event) {
+    console.log(event)
     console.log(this)
     var results;
     var self = this;
